@@ -145,6 +145,7 @@ body {
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .hero-logo img {
