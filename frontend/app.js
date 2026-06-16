@@ -159,7 +159,7 @@ function reset() {
 
 topbarLogo.addEventListener('click', reset);
 
-document.getElementById('ticket-form').addEventListener('submit', e => {
+document.getElementById('ticket-form')?.addEventListener('submit', e => {
   e.preventDefault();
   // TODO: enviar datos al Worker → API Gateway → notificar a Cecilia
   document.getElementById('ticket-form').hidden = true;
