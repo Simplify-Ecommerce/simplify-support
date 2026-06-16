@@ -13,26 +13,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── Nav ── */
-.nav {
-  display: flex;
-  align-items: center;
-  padding: 20px 48px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  background-color: rgba(250, 250, 249, 0.85);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.nav-logo {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: #111;
-}
-
 /* ── Hero ── */
 .hero {
   text-align: center;
