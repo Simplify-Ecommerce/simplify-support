@@ -658,26 +658,15 @@ body {
     padding: 5px 10px 5px 8px;
   }
 
-  /* Chips — scroll horizontal en vez de wrap */
+  /* Chips */
   .chips {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
+    justify-content: center;
     max-width: 100%;
-    gap: 6px;
-    padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .chips::-webkit-scrollbar {
-    display: none;
   }
 
   .chip {
     font-size: 12px;
     padding: 7px 14px;
-    flex-shrink: 0;
   }
 
   /* Doc content — topbar es más alto en mobile por el stack */
