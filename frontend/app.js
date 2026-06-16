@@ -97,15 +97,15 @@ async function ask(question) {
   // Collapse hero after fade-out transition completes
   setTimeout(() => app.classList.add('hero-collapsed'), 380);
 
-  // TODO: replace with actual Cloudflare Worker endpoint
-  // const res = await fetch('https://<worker>.workers.dev/ask', {
+  // TODO: descomentar cuando API Gateway esté configurado
+  // const res = await fetch('/api/ask', {
   //   method: 'POST',
   //   headers: { 'Content-Type': 'application/json' },
   //   body: JSON.stringify({ question }),
   // });
   // const { answer } = await res.json();
 
-  await new Promise(r => setTimeout(r, 1100)); // simulate latency
+  await new Promise(r => setTimeout(r, 1100)); // simula latencia — borrar con el TODO
   const answer = MOCK_RESPONSE;
 
   docArticle.innerHTML = marked.parse(answer);
