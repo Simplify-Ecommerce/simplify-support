@@ -522,6 +522,53 @@ body {
   font-size: 14px;
 }
 
+/* ── No results ── */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 24px;
+  gap: 12px;
+}
+
+.no-results-icon {
+  color: #ccc;
+  margin-bottom: 4px;
+}
+
+.no-results-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.no-results-desc {
+  font-size: 14px;
+  color: #888;
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+.no-results-btn {
+  margin-top: 8px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #fff;
+  background: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.no-results-btn:hover {
+  background: #333;
+}
+
 /* ── Skeleton loader ── */
 .skeleton {
   display: flex;

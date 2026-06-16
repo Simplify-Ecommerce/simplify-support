@@ -107,8 +107,22 @@ async function ask(question) {
     if (!res.ok) throw new Error('upstream');
 
     const data = await res.json();
-    docArticle.innerHTML = marked.parse(data.answer ?? '');
-    revealContent();
+    const answer = data.answer ?? '';
+
+    if (answer.trim() === 'NO_INFO') {
+      docArticle.innerHTML = `
+        <div class="no-results">
+          <div class="no-results-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v4M11 16h.01"/></svg>
+          </div>
+          <h3 class="no-results-title">No encontramos información sobre esto</h3>
+          <p class="no-results-desc">Esta consulta no está cubierta en nuestra base de conocimiento. Podés enviar un ticket y nuestro equipo te responderá.</p>
+          <button class="no-results-btn" onclick="document.getElementById('ticket-section').scrollIntoView({ behavior: 'smooth' })">Enviar ticket</button>
+        </div>`;
+    } else {
+      docArticle.innerHTML = marked.parse(answer);
+      revealContent();
+    }
   } catch {
     docArticle.innerHTML = '<p class="doc-error">Ocurrió un error al procesar tu consulta. Intenta de nuevo.</p>';
   }
