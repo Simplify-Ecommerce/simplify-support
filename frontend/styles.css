@@ -598,13 +598,120 @@ body {
   100% { background-position: -200% 0; }
 }
 
-/* ── Responsive ── */
+/* ─────────────────────────────────────────
+   Responsive — mobile
+───────────────────────────────────────── */
 @media (max-width: 640px) {
+
+  /* Topbar */
   .topbar-inner {
-    padding: 10px 20px;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .topbar-logo img {
+    height: 18px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 24px 20px;
+    justify-content: center;
+  }
+
+  .hero-logo img {
+    height: 72px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  /* Search — font-size 16px evita el zoom automático en iOS */
+  .search-input {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .search-btn {
+    width: 38px;
+    height: 38px;
+    margin: 4px;
+  }
+
+  /* Status badge — oculta el texto, solo punto */
+  .status-badge {
+    top: 14px;
+    right: 16px;
+    padding: 6px 8px;
+    gap: 0;
+  }
+
+  .status-text,
+  .status-badge svg {
+    display: none;
+  }
+
+  /* Chips — scroll horizontal en vez de wrap */
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    max-width: 100%;
+    gap: 6px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 7px 14px;
+    flex-shrink: 0;
+  }
+
+  /* Doc content */
+  .app.has-response .doc-content {
+    padding: 68px 16px 48px;
   }
 
   .doc-article {
-    padding: 32px 24px;
+    padding: 28px 20px;
+    border-radius: 10px;
+  }
+
+  .doc-article h1 {
+    font-size: 21px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+
+  .doc-article h2 {
+    font-size: 16px;
+    margin-top: 28px;
+  }
+
+  .doc-article pre {
+    padding: 16px;
+    border-radius: 6px;
+  }
+
+  /* Ticket */
+  .ticket-card {
+    padding: 24px 20px;
+  }
+
+  .ticket-fields {
+    grid-template-columns: 1fr;
+  }
+
+  /* No results */
+  .no-results {
+    padding: 36px 16px;
   }
 }
