@@ -1,10 +1,11 @@
-const app       = document.getElementById('app');
-const hero      = document.getElementById('hero');
-const heroForm  = document.getElementById('hero-form');
-const topForm   = document.getElementById('topbar-form');
-const mainInput = document.getElementById('main-input');
-const topInput  = document.getElementById('top-input');
+const app        = document.getElementById('app');
+const hero       = document.getElementById('hero');
+const heroForm   = document.getElementById('hero-form');
+const topForm    = document.getElementById('topbar-form');
+const mainInput  = document.getElementById('main-input');
+const topInput   = document.getElementById('top-input');
 const docArticle = document.getElementById('doc-article');
+const topbarLogo = document.querySelector('.topbar-logo');
 
 // Placeholder response for development — replace with Worker call
 const MOCK_RESPONSE = `
@@ -106,6 +107,15 @@ document.querySelectorAll('.chip').forEach(chip => {
     ask(chip.textContent);
   });
 });
+
+function reset() {
+  app.classList.remove('has-response', 'hero-collapsed');
+  docArticle.innerHTML = '';
+  mainInput.value = '';
+  topInput.value = '';
+}
+
+topbarLogo.addEventListener('click', reset);
 
 heroForm.addEventListener('submit', e => {
   e.preventDefault();
