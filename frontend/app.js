@@ -113,7 +113,7 @@ async function ask(question) {
       docArticle.innerHTML = `
         <div class="no-results">
           <div class="no-results-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v4M11 16h.01"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="m8.5 8.5 5 5m0-5-5 5"/></svg>
           </div>
           <h3 class="no-results-title">No encontramos información sobre esto</h3>
           <p class="no-results-desc">Esta consulta no está cubierta en nuestra base de conocimiento. Podés enviar un ticket y nuestro equipo te responderá.</p>
