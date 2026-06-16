@@ -51,8 +51,22 @@ async function ask(question) {
   app.classList.add('has-response');
   topInput.value = question;
 
-  // Show loading
-  docArticle.innerHTML = '<div class="doc-loading"><span></span><span></span><span></span></div>';
+  // Show skeleton
+  docArticle.innerHTML = `
+    <div class="skeleton">
+      <div class="sk-line sk-title"></div>
+      <div class="sk-line sk-p" style="width:90%"></div>
+      <div class="sk-line sk-p" style="width:75%"></div>
+      <div class="sk-line sk-p" style="width:83%"></div>
+      <div class="sk-line sk-heading" style="margin-top:32px;width:45%"></div>
+      <div class="sk-line sk-p" style="width:95%"></div>
+      <div class="sk-line sk-p" style="width:88%"></div>
+      <div class="sk-line sk-p" style="width:60%"></div>
+      <div class="sk-line sk-heading" style="margin-top:32px;width:38%"></div>
+      <div class="sk-line sk-p" style="width:92%"></div>
+      <div class="sk-line sk-p" style="width:70%"></div>
+    </div>
+  `;
 
   // Collapse hero after fade-out transition completes
   setTimeout(() => app.classList.add('hero-collapsed'), 380);

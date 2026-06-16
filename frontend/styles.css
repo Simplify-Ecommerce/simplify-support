@@ -358,28 +358,27 @@ body {
   font-size: 14px;
 }
 
-/* ── Loading dots ── */
-.doc-loading {
+/* ── Skeleton loader ── */
+.skeleton {
   display: flex;
-  gap: 6px;
-  align-items: center;
-  padding: 16px 0;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.doc-loading span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ccc;
-  animation: pulse 1.2s ease-in-out infinite;
+.sk-line {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #efefed 25%, #e5e5e3 50%, #efefed 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
 }
 
-.doc-loading span:nth-child(2) { animation-delay: 0.2s; }
-.doc-loading span:nth-child(3) { animation-delay: 0.4s; }
+.sk-title   { height: 28px; width: 65%; margin-bottom: 8px; }
+.sk-heading { height: 17px; }
+.sk-p       { height: 14px; }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(0.8); }
-  50%       { opacity: 1;   transform: scale(1);   }
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* ── Responsive ── */
