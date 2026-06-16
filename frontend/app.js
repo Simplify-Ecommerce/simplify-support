@@ -109,7 +109,7 @@ async function ask(question) {
     const data = await res.json();
     const answer = data.answer ?? '';
 
-    if (answer.trim() === 'NO_INFO') {
+    if (answer.includes('NO_INFO')) {
       docArticle.innerHTML = `
         <div class="no-results">
           <div class="no-results-icon">
