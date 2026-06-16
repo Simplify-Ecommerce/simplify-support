@@ -109,10 +109,25 @@ document.querySelectorAll('.chip').forEach(chip => {
 });
 
 function reset() {
-  app.classList.remove('has-response', 'hero-collapsed');
-  docArticle.innerHTML = '';
-  mainInput.value = '';
-  topInput.value = '';
+  const docContent = document.getElementById('doc-content');
+
+  // Fade out doc content smoothly before collapsing layout
+  docContent.style.transition = 'opacity 0.25s ease';
+  docContent.style.opacity = '0';
+  docContent.style.pointerEvents = 'none';
+
+  // Restore hero height while still invisible — no layout jump
+  app.classList.remove('hero-collapsed');
+
+  setTimeout(() => {
+    // Trigger topbar slide-out and hero fade-in via CSS transitions
+    app.classList.remove('has-response');
+    // Clean up inline styles so CSS takes over again
+    docContent.style.cssText = '';
+    docArticle.innerHTML = '';
+    mainInput.value = '';
+    topInput.value = '';
+  }, 280);
 }
 
 topbarLogo.addEventListener('click', reset);
