@@ -14,18 +14,35 @@ export default async function handler(req) {
     });
   }
 
-  // Llama al API Gateway de AWS con la API Key guardada en variables de entorno
-  const response = await fetch(process.env.API_GATEWAY_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': process.env.API_GATEWAY_KEY,
-    },
-    body: JSON.stringify({ question }),
-  });
+  const url = process.env.API_GATEWAY_URL;
+  const key = process.env.API_GATEWAY_KEY;
+
+  console.log('[ask] URL:', url);
+  console.log('[ask] Key defined:', !!key);
+
+  let response;
+  try {
+    response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': key,
+      },
+      body: JSON.stringify({ question }),
+    });
+  } catch (fetchErr) {
+    console.error('[ask] fetch failed:', fetchErr.message);
+    return new Response(JSON.stringify({ error: 'fetch failed', detail: fetchErr.message }), {
+      status: 502,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  console.log('[ask] upstream status:', response.status);
 
   if (!response.ok) {
     const errorText = await response.text();
+    console.error('[ask] upstream error:', errorText);
     return new Response(JSON.stringify({ error: 'upstream error', status: response.status, detail: errorText }), {
       status: 502,
       headers: { 'Content-Type': 'application/json' },
