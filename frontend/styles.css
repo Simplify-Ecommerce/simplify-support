@@ -605,7 +605,7 @@ body {
 
   /* Topbar */
   .topbar-inner {
-    padding: 16px 16px 14px;
+    padding: 18px 16px 16px;
     gap: 12px;
     flex-direction: column;
     align-items: stretch;
@@ -616,7 +616,7 @@ body {
   }
 
   .topbar-logo img {
-    height: 18px;
+    height: 24px;
   }
 
   .topbar-form {
