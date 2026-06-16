@@ -671,7 +671,7 @@ body {
 
   /* Doc content — topbar es más alto en mobile por el stack */
   .app.has-response .doc-content {
-    padding: 110px 16px 48px;
+    padding: 140px 16px 48px;
   }
 
   .doc-article {
