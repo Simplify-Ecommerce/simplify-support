@@ -25,7 +25,8 @@ export default async function handler(req) {
   });
 
   if (!response.ok) {
-    return new Response(JSON.stringify({ error: 'upstream error' }), {
+    const errorText = await response.text();
+    return new Response(JSON.stringify({ error: 'upstream error', status: response.status, detail: errorText }), {
       status: 502,
       headers: { 'Content-Type': 'application/json' },
     });
