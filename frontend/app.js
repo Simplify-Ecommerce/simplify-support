@@ -1,3 +1,28 @@
+async function checkShopifyStatus() {
+  const dot  = document.getElementById('status-dot');
+  const text = document.getElementById('status-text');
+  try {
+    const res  = await fetch('https://www.shopifystatus.com/api/v2/status.json');
+    const data = await res.json();
+    const indicator = data.status.indicator; // 'none' | 'minor' | 'major' | 'critical'
+
+    const labels = {
+      none:     'Shopify operativo',
+      minor:    'Shopify — incidencia menor',
+      major:    'Shopify — incidencia mayor',
+      critical: 'Shopify — interrupción crítica',
+    };
+
+    text.textContent = labels[indicator] ?? data.status.description;
+    dot.className = 'status-dot ' + (indicator === 'none' ? 'ok' : indicator === 'minor' ? 'warning' : 'error');
+  } catch {
+    text.textContent = 'Ver estado de Shopify';
+    dot.className = 'status-dot';
+  }
+}
+
+checkShopifyStatus();
+
 const app        = document.getElementById('app');
 const hero       = document.getElementById('hero');
 const heroForm   = document.getElementById('hero-form');
