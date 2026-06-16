@@ -86,6 +86,13 @@ function revealContent() {
   });
 }
 
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    mainInput.value = chip.textContent;
+    ask(chip.textContent);
+  });
+});
+
 heroForm.addEventListener('submit', e => {
   e.preventDefault();
   ask(mainInput.value);

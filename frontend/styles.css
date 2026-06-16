@@ -216,6 +216,37 @@ body {
 }
 
 /* ─────────────────────────────────────────
+   Chips
+───────────────────────────────────────── */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 620px;
+  margin-top: 16px;
+}
+
+.chip {
+  font-family: inherit;
+  font-size: 13px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 99px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #111;
+}
+
+/* ─────────────────────────────────────────
    Documentation content
 ───────────────────────────────────────── */
 .doc-content {
