@@ -157,6 +157,13 @@ function reset() {
 
 topbarLogo.addEventListener('click', reset);
 
+document.getElementById('ticket-form').addEventListener('submit', e => {
+  e.preventDefault();
+  // TODO: enviar datos al Worker → API Gateway → notificar a Cecilia
+  document.getElementById('ticket-form').hidden = true;
+  document.getElementById('ticket-success').hidden = false;
+});
+
 heroForm.addEventListener('submit', e => {
   e.preventDefault();
   ask(mainInput.value);

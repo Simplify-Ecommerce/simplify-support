@@ -60,6 +60,29 @@
     <!-- Documentation response area -->
     <main class="doc-content" id="doc-content">
       <article class="doc-article" id="doc-article"></article>
+
+      <div class="ticket-section" id="ticket-section">
+        <div class="ticket-card">
+          <div class="ticket-header">
+            <p class="ticket-title">¿Te quedaron dudas?</p>
+            <p class="ticket-subtitle">Envía un ticket y nuestro equipo te responderá pronto.</p>
+          </div>
+
+          <form class="ticket-form" id="ticket-form">
+            <div class="ticket-fields">
+              <input class="ticket-input" type="text" name="name" placeholder="Tu nombre" required>
+              <input class="ticket-input" type="email" name="email" placeholder="Tu correo" required>
+            </div>
+            <textarea class="ticket-textarea" name="message" placeholder="Describe tu duda o problema…" rows="4" required></textarea>
+            <button class="ticket-btn" type="submit">Enviar ticket</button>
+          </form>
+
+          <div class="ticket-success" id="ticket-success" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <p>Ticket enviado. Cecilia te contactará pronto.</p>
+          </div>
+        </div>
+      </div>
     </main>
 
   </div>
