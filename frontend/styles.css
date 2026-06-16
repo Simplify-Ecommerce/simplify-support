@@ -650,17 +650,12 @@ body {
     margin: 4px;
   }
 
-  /* Status badge — oculta el texto, solo punto */
+  /* Status badge */
   .status-badge {
     top: 14px;
     right: 16px;
-    padding: 6px 8px;
-    gap: 0;
-  }
-
-  .status-text,
-  .status-badge svg {
-    display: none;
+    font-size: 11px;
+    padding: 5px 10px 5px 8px;
   }
 
   /* Chips — scroll horizontal en vez de wrap */
