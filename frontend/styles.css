@@ -605,12 +605,22 @@ body {
 
   /* Topbar */
   .topbar-inner {
-    padding: 10px 16px;
-    gap: 10px;
+    padding: 10px 16px 12px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar-logo {
+    justify-content: flex-start;
   }
 
   .topbar-logo img {
     height: 18px;
+  }
+
+  .topbar-form {
+    width: 100%;
   }
 
   /* Hero */
