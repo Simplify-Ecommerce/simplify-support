@@ -363,18 +363,24 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  opacity: 0;
+  animation: skeletonFadeIn 0.6s ease 0.3s forwards;
 }
 
 .sk-line {
   border-radius: 6px;
-  background: linear-gradient(90deg, #efefed 25%, #e5e5e3 50%, #efefed 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.6s ease-in-out infinite;
+  background: linear-gradient(90deg, #f2f2f0 20%, #e8e8e6 50%, #f2f2f0 80%);
+  background-size: 300% 100%;
+  animation: shimmer 2.8s ease-in-out infinite;
 }
 
 .sk-title   { height: 28px; width: 65%; margin-bottom: 8px; }
 .sk-heading { height: 17px; }
 .sk-p       { height: 14px; }
+
+@keyframes skeletonFadeIn {
+  to { opacity: 1; }
+}
 
 @keyframes shimmer {
   0%   { background-position: 200% 0; }
