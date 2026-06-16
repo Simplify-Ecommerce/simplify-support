@@ -1,2 +1,2 @@
-# simplify-support
+# Simplify Support
 
