@@ -516,6 +516,12 @@ body {
   }
 }
 
+/* ── Error state ── */
+.doc-error {
+  color: #e53e3e;
+  font-size: 14px;
+}
+
 /* ── Skeleton loader ── */
 .skeleton {
   display: flex;

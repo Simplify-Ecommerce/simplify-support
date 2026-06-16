@@ -97,19 +97,21 @@ async function ask(question) {
   // Collapse hero after fade-out transition completes
   setTimeout(() => app.classList.add('hero-collapsed'), 380);
 
-  // TODO: descomentar cuando API Gateway esté configurado
-  // const res = await fetch('/api/ask', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ question }),
-  // });
-  // const { answer } = await res.json();
+  try {
+    const res = await fetch('/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question }),
+    });
 
-  await new Promise(r => setTimeout(r, 1100)); // simula latencia — borrar con el TODO
-  const answer = MOCK_RESPONSE;
+    if (!res.ok) throw new Error('upstream');
 
-  docArticle.innerHTML = marked.parse(answer);
-  revealContent();
+    const data = await res.json();
+    docArticle.innerHTML = marked.parse(data.answer ?? '');
+    revealContent();
+  } catch {
+    docArticle.innerHTML = '<p class="doc-error">Ocurrió un error al procesar tu consulta. Intenta de nuevo.</p>';
+  }
 }
 
 function revealContent() {
