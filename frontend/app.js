@@ -80,7 +80,7 @@ async function ask(question) {
   // Show aura loader
   docArticle.innerHTML = `
     <div class="aura-loading">
-      <svg class="aura-svg" viewBox="0 0 1000 500" preserveAspectRatio="none" style="filter:blur(18px);will-change:filter,opacity">
+      <svg class="aura-svg" viewBox="0 0 1000 500" preserveAspectRatio="none" style="filter:blur(10px);will-change:filter,opacity">
         <defs>
           <linearGradient id="simplify-glow-grad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%"   stop-color="#2142E7" stop-opacity="0.669"></stop>
