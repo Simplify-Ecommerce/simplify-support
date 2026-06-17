@@ -312,7 +312,7 @@ body {
   pointer-events: all;
   height: auto;
   overflow: visible;
-  padding: 80px 24px 80px;
+  padding: 90px 24px 80px;
 }
 
 .doc-article {
@@ -322,6 +322,24 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 12px;
   padding: 48px 56px;
+}
+
+.doc-article .doc-question {
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaa;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.doc-article:has(.aura-loading) {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.doc-article:has(.aura-loading) .doc-question {
+  padding: 0 28px;
 }
 
 /* ── Typography ── */
@@ -348,7 +366,7 @@ body {
 .doc-article h3 {
   font-size: 14px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.04em;
   color: #888;
   margin-top: 28px;
@@ -542,6 +560,7 @@ body {
   font-weight: 600;
   color: #111;
   letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .no-results-desc {
@@ -570,32 +589,93 @@ body {
 }
 
 /* ── Skeleton loader ── */
-.skeleton {
+/* ─────────────────────────────────────────
+   Aura loader
+───────────────────────────────────────── */
+.aura-loading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(148, 163, 184, 0.18),
+    inset 0 0 0 1px rgba(148, 163, 184, 0.22),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.16);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.aura-loading.aura-visible {
+  opacity: 1;
+}
+
+.aura-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.aura-grain {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: overlay;
+  opacity: 0.75;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.aura-center {
+  position: relative;
+  z-index: 4;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  opacity: 0;
-  animation: skeletonFadeIn 0.6s ease 0.3s forwards;
+  align-items: center;
+  gap: 16px;
 }
 
-.sk-line {
-  border-radius: 6px;
-  background: linear-gradient(90deg, #f2f2f0 20%, #e8e8e6 50%, #f2f2f0 80%);
-  background-size: 300% 100%;
-  animation: shimmer 2.8s ease-in-out infinite;
+.aura-question,
+.doc-article .aura-question {
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaa !important;
+  letter-spacing: 0.01em;
+  text-align: center;
+  max-width: 480px;
+  margin-bottom: 0;
+  line-height: 1.4;
 }
 
-.sk-title   { height: 28px; width: 65%; margin-bottom: 8px; }
-.sk-heading { height: 17px; }
-.sk-p       { height: 14px; }
-
-@keyframes skeletonFadeIn {
-  to { opacity: 1; }
+.aura-label {
+  position: relative;
+  z-index: 4;
+  font-size: 14px;
+  font-weight: 500;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,1)    40%,
+    rgba(0,0,0,0.55) 60%,
+    rgba(0,0,0,0.55) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: auraShimmer 3.6s linear infinite;
 }
 
-@keyframes shimmer {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+@keyframes auraShimmer {
+  0%   { background-position: 100% center; }
+  100% { background-position: -100% center; }
 }
 
 /* ─────────────────────────────────────────
