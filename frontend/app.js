@@ -83,9 +83,9 @@ async function ask(question) {
       <svg class="aura-svg" viewBox="0 0 1000 500" preserveAspectRatio="none" style="filter:blur(18px);will-change:filter,opacity">
         <defs>
           <linearGradient id="simplify-glow-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%"   stop-color="#111111" stop-opacity="1"></stop>
-            <stop offset="52%"  stop-color="#555555" stop-opacity="0.9"></stop>
-            <stop offset="100%" stop-color="#aaaaaa" stop-opacity="0.7"></stop>
+            <stop offset="0%"   stop-color="#2142E7" stop-opacity="0.669"></stop>
+            <stop offset="52%"  stop-color="#03B5ED" stop-opacity="0.72"></stop>
+            <stop offset="100%" stop-color="#03B5ED" stop-opacity="0.488"></stop>
             <animate attributeName="x2" values="1;0.76;1"   dur="20s" repeatCount="indefinite"></animate>
             <animate attributeName="y1" values="0;0.18;0"   dur="17s" repeatCount="indefinite"></animate>
           </linearGradient>
@@ -97,7 +97,7 @@ async function ask(question) {
           stroke-width="1"
           stroke-linejoin="round"
           stroke-linecap="round"
-          opacity="1"
+          opacity="0.7"
           d="M 16,0 L 984,0 A 16 16 0 0 1 1000 16 L 1000 484 A 16 16 0 0 1 984 500 L 16,500 A 16 16 0 0 1 0 484 L 0 16 A 16 16 0 0 1 16 0 Z M 11.5,16 C 13.9,35.3 17.1,55.2 20.2,74.5 C 23.1,93.8 25.3,113.7 26.6,133 C 27.1,152.3 26.8,172.2 25.9,191.5 C 24.7,210.8 23.2,230.7 21.8,250 C 20.4,269.3 19,289.2 17.7,308.5 C 16.4,327.8 15,347.7 13.6,367 C 12.4,386.3 11.5,406.2 10.8,425.5 C 10.6,444.8 10.9,464.7 11.5,484 A 4.5 4.5 0 0 0 16 488.5 C 55.9,486 97.1,482.7 137,479.4 C 176.9,476.1 218.1,473.1 258,470.7 C 297.9,469.1 339.1,468.1 379,467.8 C 418.9,468.2 460.1,469.1 500,470.4 C 539.9,472.1 581.1,474.3 621,476.7 C 660.9,479.2 702.1,481.9 742,484.3 C 781.9,486.3 823.1,487.8 863,488.8 C 902.9,489.1 944.1,489 984,488.5 A 4.5 4.5 0 0 0 988.5 484 C 986.8,464.7 985.2,444.8 984.4,425.5 C 984.3,406.2 984.8,386.3 985.5,367 C 986.1,347.7 986.5,327.8 986.5,308.5 C 986.4,289.2 986.1,269.3 985.9,250 C 985.9,230.7 986.3,210.8 986.9,191.5 C 987.8,172.2 988.7,152.3 989.5,133 C 990,113.7 990.3,93.8 990.2,74.5 C 989.9,55.2 989.3,35.3 988.5,16 A 4.5 4.5 0 0 0 984 11.5 C 944.1,13.1 902.9,15.4 863,18.1 C 823.1,20.8 781.9,23.5 742,25.9 C 702.1,27.8 660.9,29.4 621,30.8 C 581.1,31.6 539.9,31.9 500,31.7 C 460.1,31.1 418.9,29.9 379,28.3 C 339.1,26.4 297.9,24.3 258,21.9 C 218.1,19.5 176.9,17.1 137,15 C 97.1,13.3 55.9,12 16,11.5 A 4.5 4.5 0 0 0 11.5 16 Z"
         >
           <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
